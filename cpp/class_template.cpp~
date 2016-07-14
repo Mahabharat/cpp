@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+template<class A,class B>
+
+class OM
+{
+	private:
+		A a;
+		B b;
+	public:
+		OM(A x, B y)
+		{
+			a=x;
+			b=y;
+		}
+		A bigger();
+};
+
+template<class A,class B>
+A OM<A,B>::bigger()
+{
+	return(a>b?a:b);
+}		
+
+main()
+{
+	OM <float,int> obj(49.9,89);
+	cout<<obj.bigger()<<endl;
+}

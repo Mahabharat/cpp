@@ -1,0 +1,65 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+void fread(int);
+
+int foods()
+{
+	cout<<"\n1-Positive foods\n";
+	cout<<"2-zero foods\n";
+	cout<<"3-negative foods\n";
+	cout<<"4-exit\n";
+
+	int number;
+	cout<<"\nchoose your number\n";
+	cin>>number;
+	return number;
+}
+
+main()
+{
+	int choice;
+	choice=foods();
+	while(choice!=4)
+	{
+		switch(choice)
+		{
+			case 1:
+				fread(1);
+				break;
+			case 2:
+				fread(2);
+				break;
+			case 3:
+				fread(3);
+				break;
+		}
+		choice=foods();
+	}
+}
+
+void fread(int x)
+{
+	ifstream object("goods.txt");
+	string name;
+	double value;
+	
+	if(x==1){
+		while(object>>name>>value){
+			if(value>0){
+				cout<<name<<' '<<value<<endl;
+			}}}
+	
+	if(x==2){
+		while(object>>name>>value){
+			if(value==0){
+				cout<<name<<' '<<value<<endl;
+			}}}
+		
+	if(x==3){
+		while(object>>name>>value){
+			if(value<0){
+				cout<<name<<' '<<value<<endl;
+			}}}
+}			

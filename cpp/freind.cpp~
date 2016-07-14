@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+class className
+{
+	private:
+		int a;
+		friend void friendfunc(className obj);
+	public:
+		className(int x)
+		{
+			a=x;
+			cout<<"a="<<a<<endl;
+		}
+	
+};
+
+void friendfunc(className obj)
+{
+	obj.a=10;
+	cout<<"new a="<<obj.a<<endl;
+}
+
+main()
+{
+	className obj1(5);
+	friendfunc(obj1);
+}

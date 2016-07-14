@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+
+void disp(int x)
+{
+	cout<<"Print a integer "<<x<<endl;
+}
+void disp(float x)
+{
+	cout<<"Print a float "<<x<<endl;
+}
+main()
+{
+	int a=10;
+	float b=23.20;
+	disp(a);
+	disp(b);
+}
